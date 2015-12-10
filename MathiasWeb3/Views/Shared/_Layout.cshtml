@@ -1,67 +1,68 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - MathiasWeb</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
 </head>
 
 
 <body>
-<!-- Header -->
-<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+
+
+    <!-- Header -->
+    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-toggle"></span>
+                </button>
+                <a class="navbar-brand" href="/">Mathias Control Panel</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+                            <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span>
+                        </a>
+                        <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                            <li><a href="~/Settings"><i class="glyphicon glyphicon-cog"></i>Preferences</a></li>
+
+                            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /container -->
+    </div>
+    <!-- /Header -->
+    <!-- Main -->
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-toggle"></span>
-            </button>
-            <a class="navbar-brand" href="#">Control Panel</a>
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            Welcome to the Mathias Web interface.
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+        <!-- upper section -->
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-                        <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span>
-                    </a>
-                    <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div><!-- /container -->
-</div>
-<!-- /Header -->
-<!-- Main -->
-<div class="container">
-    <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        Welcome to the Mathias Web interface.
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+        </div><!--/container-->
+        <footer>
+            <p>&copy; @DateTime.Now.Year - MathiasWeb - The Mathias Crew</p>
+        </footer>
     </div>
-    <!-- upper section -->
- 
- <div class="container body-content">
-        @RenderBody()
-        <hr />
-    </div><!--/container-->
-    <footer>
-        <p>&copy; @DateTime.Now.Year - MathiasWeb - The Mathias Crew</p>
-    </footer>
-    </div>
-<!-- /Main -->
+    <!-- /Main -->
+    <!-- script references -->
 
-
-
-<!-- script references -->
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 
 </html>

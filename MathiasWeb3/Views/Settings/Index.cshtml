@@ -10,57 +10,99 @@
         <hr>
 
         <ul class="nav nav-stacked">
-            <li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> Accounts</a></li>
-            <li><a href="javascript:;"><i class="glyphicon glyphicons-user-add"></i> Add Accounts</a></li>
-            <li><a href="javascript:;"><i class="glyphicon glyphicons-sun"></i> Météo</a></li>
-            <li><a href="javascript:;"><i class="glyphicon glyphicons-message-in"></i> Mail</a></li>
-            <li><a href="javascript:;"><i class="glyphicon glyphicons-flash"></i> Network</a></li>
-            <li><a href="javascript:;"><i class="glyphicon glyphicon-plus"></i> More informations...</a></li>
+            <li><a data-toggle="tab" href="#accounts"><i class="glyphicon glyphicon-user"></i> Accounts</a></li>
+            <li><a data-toggle="tab" href="#meteo"><i class="glyphicon glyphicon-cloud"></i> Météo</a></li>
+            <li><a data-toggle="tab" href="#mail"><i class="glyphicon glyphicon-envelope"></i> Mail</a></li>
+            <li><a data-toggle="tab" href="network"><i class="glyphicon glyphicon-transfer"></i> Network</a></li>
+            <li><a data-toggle="tab" href="more"><i class="glyphicon glyphicon-plus"></i> More options...</a></li>
         </ul>
 
         <hr>
 
     </div><!-- /span-3 -->
+
     <div class="col-sm-9">
 
-        <!-- column 2 -->
-        <h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>
-
-        <hr>
-
-        <div class="row">
-            <!-- center left-->
-
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>Processing Status</h4></div>
-                <div class="panel-body">
-
-                    <small>Complete</small>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-                            <span class="sr-only">72% Complete</span>
+        <div class="tab-content">
+            <div id="accounts" class="tab-pane fade in active">
+                <h3>Accounts</h3>
+                <p>Personnal account settings.</p><br />
+                <hr />
+                <form>
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" placeholder="Full Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="current_password">Password</label>
+                        <input type="password" class="form-control" id="current_password" placeholder="Current Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="new_password">New Password</label>
+                        <input type="password" class="form-control" id="new_password" placeholder="New Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <select class="form-control" id="language">
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div id="meteo" class="tab-pane fade">
+                <h3>Météo</h3>
+                <hr />
+                <form class="form-horizontal">
+                    <div class="form-group">
+                            <label>
+                                <input type="checkbox" /> Activer la géolocalisation
+                            </label>
+                    </div>
+                    <h3>Manual location</h3>
+                    <br />
+                    <div class="form-group">
+                        <label for="lattitude" class="col-sm-2 control-label">Lattidue</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lat" placeholder="Latittude" />
                         </div>
                     </div>
-                    <small>In Progress</small>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                            <span class="sr-only">20% Complete</span>
+                    <div class="form-group">
+                        <label for="longitude" class="col-sm-2 control-label">Longitude</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lat" placeholder="Longitude" />
                         </div>
                     </div>
-                    <small>At Risk</small>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                            <span class="sr-only">80% Complete</span>
-                        </div>
-                    </div>
-                </div><!--/panel-body-->
-            </div><!--/panel-->
-
-        </div><!--/col-->
-        <!--center-right-->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
 
-    </div><!--/row-->
-</div><!--/col-span-9-->
+            </div>
+            <div id="mail" class="tab-pane fade">
+                <h3>Mail Configuration</h3>
+                <p>Configure your email with Gmail, Yahoo!, Exchange or IMAP.</p>
+                <hr />
+                <img src="~/Content/Images/gmail.png" />
+                <img src="~/Content/Images/yahoo.png" />
+                <img src="~/Content/Images/outlook.png" />
+                <img src="~/Content/Images/mail.png" />
+            </div>
+            <div id="network" class="tab-pane fade">
+                <h3>Network</h3>
+                <p>Test bonjour</p>
+            </div>
+        </div>
+
+    </div><!--/col-span-9-->
 
 
